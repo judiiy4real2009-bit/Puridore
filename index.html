@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#8755e8">
+  <title>PURIDORE | Learn Without Limits</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app" id="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🌍</div>
+      <div>
+        <h1>PURIDORE</h1>
+        <p>LEARN WITHOUT LIMITS</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <span class="xp-pill">⭐ <b id="topXP">0</b> XP</span>
+      <select id="themeSelect" aria-label="Choose theme">
+        <option value="rainbow">🌈 Rainbow</option>
+        <option value="pink">🌸 Pink</option>
+        <option value="ocean">🌊 Ocean</option>
+        <option value="sunset">🌅 Sunset</option>
+        <option value="forest">🌿 Forest</option>
+        <option value="dark">🌙 Dark</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <span class="eyebrow">YOUR WORLD OF DISCOVERY</span>
+      <h2>Big dreams begin with <span>curiosity!</span> 🚀</h2>
+      <p>Explore new subjects, play learning games, and discover how amazing your mind can be.</p>
+    </div>
+    <div class="hero-art">🚀🌎✨</div>
+  </section>
+
+  <main>
+    <section class="panel profile-panel" id="profilePanel">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">FIRST THINGS FIRST</span>
+          <h2>Who's exploring today? 👋</h2>
+          <p>Create your explorer profile to begin your adventure.</p>
+        </div>
+        <div class="heading-emoji">🧑‍🚀</div>
+      </div>
+
+      <label for="explorerName">Your name</label>
+      <input id="explorerName" type="text" maxlength="24" placeholder="Enter your name">
+
+      <label for="ageGroup">Choose your explorer group</label>
+      <select id="ageGroup">
+        <option value="">Select your age group</option>
+        <option value="little">Little Explorers (0–5)</option>
+        <option value="young">Young Explorers (6–10)</option>
+        <option value="future">Future Builders (11–16)</option>
+        <option value="adult">University & Adults (17+)</option>
+      </select>
+
+      <label>Choose your avatar</label>
+      <div class="avatar-grid" id="avatarGrid">
+        <button class="avatar selected" data-avatar="👩🏽‍🚀">👩🏽‍🚀</button>
+        <button class="avatar" data-avatar="👨🏽‍🚀">👨🏽‍🚀</button>
+        <button class="avatar" data-avatar="🧑🏽‍🎓">🧑🏽‍🎓</button>
+        <button class="avatar" data-avatar="👩🏾‍🔬">👩🏾‍🔬</button>
+        <button class="avatar" data-avatar="👨🏻‍🎨">👨🏻‍🎨</button>
+        <button class="avatar" data-avatar="🦊">🦊</button>
+        <button class="avatar" data-avatar="🐼">🐼</button>
+        <button class="avatar" data-avatar="🦁">🦁</button>
+        <button class="avatar" data-avatar="🐸">🐸</button>
+        <button class="avatar" data-avatar="🦄">🦄</button>
+        <button class="avatar" data-avatar="🐯">🐯</button>
+        <button class="avatar" data-avatar="🐧">🐧</button>
+      </div>
+
+      <button class="primary-btn" id="saveProfile">Save My Profile ✨</button>
+      <p class="small-note">Your adventure starts with one little step!</p>
+    </section>
+
+    <section class="welcome-card hidden" id="welcomeCard">
+      <div class="welcome-avatar" id="welcomeAvatar">👩🏽‍🚀</div>
+      <div>
+        <span class="eyebrow">EXPLORER PROFILE ACTIVATED</span>
+        <h2 id="welcomeTitle">Welcome, Explorer!</h2>
+        <p id="welcomeText">Your learning adventure begins now!</p>
+      </div>
+      <span class="welcome-star">🌟</span>
+    </section>
+
+    <section class="dashboard hidden" id="dashboard">
+      <div class="stats-grid">
+        <div class="stat-card"><span>⭐</span><b id="xpCount">0</b><small>XP POINTS</small></div>
+        <div class="stat-card"><span>🏅</span><b id="badgeCount">0</b><small>BADGES</small></div>
+        <div class="stat-card"><span>📚</span><b id="learnedCount">0</b><small>QUIZZES COMPLETED</small></div>
+        <div class="stat-card"><span>🎮</span><b id="gamesCount">0</b><small>GAMES PLAYED</small></div>
+      </div>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">EXPLORE EVERYTHING</span>
+            <h2>🌌 The Subject Universe</h2>
+            <p>From languages and science to everyday life and exciting new skills!</p>
+          </div>
+          <span class="heading-emoji">🪐</span>
+        </div>
+
+        <input id="subjectSearch" type="search" placeholder="🔍 Search any subject...">
+
+        <div class="category-row" id="categoryRow">
+          <button class="category active" data-category="All">All subjects</button>
+          <button class="category" data-category="Languages">Languages</button>
+          <button class="category" data-category="School">School</button>
+          <button class="category" data-category="Everyday">Everyday life</button>
+          <button class="category" data-category="Technology">Technology</button>
+          <button class="category" data-category="Creative">Creative arts</button>
+          <button class="category" data-category="World">World knowledge</button>
+          <button class="category" data-category="Skills">Life skills</button>
+        </div>
+
+        <p class="result-count" id="subjectCount"></p>
+        <div class="subject-grid" id="subjectGrid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">TEST YOUR KNOWLEDGE</span>
+            <h2>🧠 Quiz Zone</h2>
+            <p>Choose a challenge and earn XP for correct answers.</p>
+          </div>
+          <span class="heading-emoji">💡</span>
+        </div>
+
+        <div class="quiz-card">
+          <div class="quiz-top">
+            <span id="quizNumber">QUESTION 1</span>
+            <span id="quizScore">0 correct</span>
+          </div>
+          <h3 id="quizQuestion">Ready to test your brain?</h3>
+          <div id="quizAnswers" class="answer-grid"></div>
+          <p id="quizFeedback" class="feedback" aria-live="polite"></p>
+          <button class="primary-btn" id="nextQuestion">Next Question ➜</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">PLAY AND LEARN</span>
+            <h2>🎮 Mini Game Corner</h2>
+            <p>Learning can be an adventure!</p>
+          </div>
+          <span class="heading-emoji">🎯</span>
+        </div>
+
+        <div class="game-grid">
+          <button class="game-card" id="mathGame">
+            <span>🔢</span><b>Math Sprint</b>
+            <small>Solve a quick maths challenge</small>
+          </button>
+          <button class="game-card" id="memoryGame">
+            <span>🧩</span><b>Memory Match</b>
+            <small>Find matching emoji pairs</small>
+          </button>
+          <button class="game-card" id="wordGame">
+            <span>🔤</span><b>Word Explorer</b>
+            <small>Discover a new word</small>
+          </button>
+          <button class="game-card" id="factGame">
+            <span>🌍</span><b>Wonder Facts</b>
+            <small>Discover something amazing</small>
+          </button>
+        </div>
+
+        <div class="game-stage" id="gameStage" aria-live="polite">
+          <p>Choose a game to begin! 🌟</p>
+        </div>
+      </section>
+
+      <section class="panel achievement-panel">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">LOOK HOW FAR YOU'VE COME</span>
+            <h2>🏆 Achievement Hall</h2>
+          </div>
+          <span class="heading-emoji">🎖️</span>
+        </div>
+
+        <div id="achievementList" class="achievement-list">
+          <div class="achievement">🔒 First Steps — Complete your first quiz</div>
+          <div class="achievement">🔒 Brain Booster — Earn 50 XP</div>
+          <div class="achievement">🔒 Game Champion — Play 3 games</div>
+          <div class="achievement">🔒 Super Explorer — Complete 5 quizzes</div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div>🌍 <b>PURIDORE</b></div>
+    <p>Learn Without Limits · Imagine · Explore · Create</p>
+    <small>Made for curious minds everywhere 💜</small>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+<div class="confetti-layer" id="confettiLayer"></div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
